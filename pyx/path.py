@@ -56,19 +56,13 @@ def _bezierpolyrange(x0, x1, x2, x3):
         else:
             q = -0.5*(b-math.sqrt(s))
 
-        try:
+        if a>1e-9:
             t = q*1.0/a
-        except ZeroDivisionError:
-            pass
-        else:
             if 0 < t < 1:
                 tc.append(t)
 
-        try:
+        if q>1e-9:
             t = c*1.0/q
-        except ZeroDivisionError:
-            pass
-        else:
             if 0 < t < 1:
                 tc.append(t)
 
